@@ -1,9 +1,22 @@
 import React from 'react';
+import {View, Text, Button} from 'react-native';
 
-class DetailScreen from React.Component{
+class DetailScreen extends React.Component {
+  static navigationOptions = {
+    title : 'NewsDetail'
+  }
+  constructor(props){
+    super(props);
+  }
   render(){
-    const title = this.props.title;
-    return (<h2> ${title} </h2>);
+    console.log('--------', JSON.stringify(this.props));
+    const {params} = this.props.navigation.state;
+    return (
+      <View>
+        <Text> News Title </Text>
+        <Text> {params.title} </Text>
+      </View>
+    );
   }
 }
 
