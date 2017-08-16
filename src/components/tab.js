@@ -28,10 +28,7 @@ import Detail from './detail';
 const HomeStack = StackNavigator({
   Home: {
     screen: Home,
-    path: '/',
-    navigationOptions: () => ({
-      title: 'Home Page',
-    }),
+    path: '/'
   },
   Detail: {
     screen: Detail,

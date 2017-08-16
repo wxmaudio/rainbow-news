@@ -1,27 +1,41 @@
 import React from 'react';
-import { Button, Text, View, StyleSheet, Platform} from 'react-native';
+import { Button, Text, View, StyleSheet, Platform } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import NewsListContainer from '../container/NewsListContainer';
 
 class HomeScreen extends React.Component{
   constructor(props){
     super(props);
-    this.onPress = this.onPress.bind(this);
-  }
-  static navigationOptions = {
-    title: 'Home',
-  }
-  onPress() {
-    const {navigate} = this.props.navigation;
-    navigate('Detail', { title: 'baby care'})
   }
 
+  static navigationOptions = ({navigation}) => ({
+    title: 'Rainbow',
+    headerRight: (
+      <Ionicons
+        name='ios-search'
+        size={26}
+        style={{ color: 'blue', padding: 10 }}
+        onPress={() => navigation.navigate('DrawerOpen')}
+      />
+    ),
+    headerLeft: (
+      <Ionicons
+        name='ios-person'
+        size={26}
+        style={{ color: 'blue', padding: 10 }}
+      />
+    )
+  })
+
+
+
   render() {
+    const navigation = this.props.navigation;
     return (
       <View style = {styles.container}>
-        <Text>Welcome to Home!</Text>
-        <Button
-          title="Go to detail"
-          onPress= {this.onPress}
-        />
+        <Text>Rainbow 更懂你~ </Text>
+        <NewsListContainer navigation={navigation}/>
+
       </View>
     );
   }
