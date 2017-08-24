@@ -3,7 +3,7 @@ import {View, Text, Platform, StyleSheet} from 'react-native';
 
 const Settings = ({navigation, name}) => {
   return (<View style = {styles.container}>
-      <Text>Settings</Text>
+      <Text>个人设置页</Text>
     </View>);
 }
 

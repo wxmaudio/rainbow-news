@@ -2,14 +2,16 @@ import React from 'react';
 import { Button, Text, View, StyleSheet, Platform } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import NewsListContainer from '../container/NewsListContainer';
-
+/**
+*  首页新闻
+*/
 class HomeScreen extends React.Component{
   constructor(props){
     super(props);
   }
 
   static navigationOptions = ({navigation}) => ({
-    title: 'Rainbow',
+    title: '首页',
     headerRight: (
       <Ionicons
         name='ios-search'
@@ -33,7 +35,10 @@ class HomeScreen extends React.Component{
     const navigation = this.props.navigation;
     return (
       <View style = {styles.container}>
-        <Text>Rainbow 更懂你~ </Text>
+        <View style = {styles.logo}>
+          <Text>Rainbow 更懂你~ </Text>
+        </View>
+
         <NewsListContainer navigation={navigation}/>
 
       </View>
@@ -44,6 +49,12 @@ class HomeScreen extends React.Component{
 const styles = StyleSheet.create({
   container: {
     marginTop: Platform.OS === 'ios' ? 20 : 0,
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  logo: {
+   fontSize: 15,
   }
 });
 

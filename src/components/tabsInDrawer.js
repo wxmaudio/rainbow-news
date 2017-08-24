@@ -5,6 +5,9 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Tab from './tab';
 import Settings from './settings';
 
+/**
+* 屏幕左侧呼出菜单， App 主入口
+*/
 const TabsInDrawer = new DrawerNavigator({
   MainTab: {
     screen: Tab,
